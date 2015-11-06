@@ -707,7 +707,8 @@ class HTTPSConnectionPool(HTTPConnectionPool):
         self.cert_reqs = cert_reqs
         self.ca_certs = ca_certs
         self.ca_cert_dir = ca_cert_dir
-        self.ssl_version = ssl_version
+        import ssl
+        self.ssl_version = ssl.PROTOCOL_TLSv1 #ssl_version
         self.assert_hostname = assert_hostname
         self.assert_fingerprint = assert_fingerprint
 
